@@ -1,0 +1,5 @@
+#!/bin/zsh
+#use with pure to remove newline
+print() {
+  [ 0 -eq $# -a "prompt_pure_precmd" = "${funcstack[-1]}" ] || builtin print "$@";
+}

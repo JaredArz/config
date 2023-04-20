@@ -1,0 +1,22 @@
+# main
+#
+# History
+HISTSIZE=500000
+SAVEHIST=$HISTSIZE
+
+# Completion
+autoload -Uz compinit promptinit colors && colors
+compinit
+promptinit
+
+NEWLINE=$'\n'
+PROMPT="%B%F{82}%~%{$reset_color%} %B%F{183}▸%{$reset_color%} "
+
+set -o vi
+
+# Environment Variables
+typeset -U path PATH
+path=(~/.local/bin $path)
+export PATH
+
+is-macos && export PATH="/opt/homebrew/bin:$PATH" >> ~/.zshrc

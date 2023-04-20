@@ -1,0 +1,6 @@
+# Aliases
+alias ls='exa -h --group-directories-first --color=always'
+alias ll='ls -l --time-style=long-iso'
+alias lt='exa --tree --level=2'
+alias grep='grep --color=auto'
+alias vi='vim'

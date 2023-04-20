@@ -9,6 +9,9 @@ autoload -Uz compinit promptinit colors && colors
 compinit
 promptinit
 
+#Z styles
+zstyle ':completion:*' menu select
+
 NEWLINE=$'\n'
 PROMPT="%B%F{82}%~%{$reset_color%} %B%F{183}▸%{$reset_color%} "
 

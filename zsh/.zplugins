@@ -1,26 +1,22 @@
 #exa for output
-if [[ $(uname) == "Darwin" ]]; then
-    :
-else
-    zinit light ptavares/zsh-exa
-fi
-
-#ZINIT##################
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
-#if after loaded compinit
+#after loaded, compinit
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
-#Load pure theme
+
+#Load pure theme, I hate this theme
 #zinit ice pick"async.zsh" src"pure.zsh" # with zsh-async library that's bundled with it.
 #zinit light sindresorhus/pure
 
+#brew plugin for mac os, dont zinit if is-macos
+is-macos || zinit light ptavares/zsh-exa
 
-#syntax highlighting
+#syntax highlighting,awful
 #zinit light zsh-users/zsh-syntax-highlighting
 
 
@@ -29,6 +25,7 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 
+################### slow af ##################
 # Self update
 #zinit self-update
 

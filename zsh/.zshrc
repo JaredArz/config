@@ -2,11 +2,16 @@
 #Jared Arzate.
 #Modular Intent.
 #April 2023
+#
+
+#NOTE: Remeber to include a ~/.hushlogin to disable terminal status message
 
 #add function paths
-fpath=( $ZDOTDIR/.zfuncs $fpath);
-#load individual functions, maybe find better way
-source $ZDOTDIR/.zfuncs/is-macos
+fpath+=$ZDOTDIR/.zfuncs
+#declare and then run if success
+#probably better way to do this than loading all functions individually
+autoload -U is-macos && is-macos
+is-macos && autoload -U xmanpage 
 
 # Local settings, misc.
 [[ -f $ZDOTDIR/.zlocal ]] && source $ZDOTDIR/.zlocal

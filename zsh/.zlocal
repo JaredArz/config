@@ -1,19 +1,29 @@
 # main
 #
 # History
+HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 HISTSIZE=500000
 SAVEHIST=$HISTSIZE
+setopt HIST_FIND_NO_DUPS         # Do not display a previously found event.
+setopt HIST_IGNORE_DUPS          # Do not record an event that was just recorded again.
+setopt HIST_IGNORE_SPACE         # Do not record an event starting with a space.
+setopt HIST_REDUCE_BLANKS        # removes blank lines from history
 
 # Completion
-autoload -Uz compinit promptinit colors && colors
-compinit
-promptinit
-
-#Z styles
+autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
 
+#Colors
+autoload -U colors && colors
+
+#for shitty premade prompts
+#autoload -Uz promptinit && promptinit
 NEWLINE=$'\n'
-PROMPT="%B%F{82}%~%{$reset_color%} %B%F{183}▸%{$reset_color%} "
+#can add a newline or add %b to end bold face
+#a welcome bug, bold only appears when globbing by excluding %b
+PROMPT="%B%F{82}%~%{$reset_color%} %B%F{183}%(?.▸.▹)%{$reset_color%} "
+#RPROMPT='%t'
+
 
 set -o vi
 

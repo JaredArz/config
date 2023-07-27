@@ -21,9 +21,8 @@ autoload -U colors && colors
 NEWLINE=$'\n'
 #can add a newline or add %b to end bold face
 #a welcome bug, bold only appears when globbing by excluding %b
-PROMPT="%B%F{82}%~%{$reset_color%} %B%F{183}%(?.▸.▹)%{$reset_color%} "
+PROMPT="%B%F{82}%n@%m %~ %{$reset_color%}%B%F{183}%(?.▸.▹)%{$reset_color%} "
 #RPROMPT='%t'
-
 
 set -o vi
 

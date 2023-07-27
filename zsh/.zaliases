@@ -1,8 +1,16 @@
 # Aliases
-alias ls='exa -h --group-directories-first --color=always'
-alias ll='ls -l --time-style=long-iso'
-alias lla='ll -a' 
-alias lt='exa --tree --level=2'
+if [[ $(which exa) == 1 ]]
+then
+    alias ls='exa -h --group-directories-first --color=always'
+    alias ll='ls -l --time-style=long-iso'
+    alias lla='ll -a' 
+    alias lt='exa --tree --level=2'
+else
+    alias ls='ls --color=auto'
+    alias ll='ls -alF'
+    alias la='ls -A'
+    alias l='ls -CF'
+fi
 alias grep='grep --color=auto'
 alias vi='vim'
 alias ..="cd ../"

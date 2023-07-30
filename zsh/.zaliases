@@ -13,6 +13,8 @@ else
 fi
 alias l='fc -RI'
 alias s='fc -AI'
+alias ls6='ls6.tacc.utexas.edu'
+alias INClabsim='10.157.89.176'
 alias grep='grep --color=auto'
 alias vi='vim'
 alias ..="cd ../"

@@ -1,0 +1,78 @@
+{
+	"layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passtrough": false,
+    "gtk-layer-shell": true,
+    "height": 0,
+    "modules-left": [
+        "wlr/workspaces"
+    ],
+    "modules-right": [
+        "tray",
+        "network",
+        "pulseaudio",
+        "pulseaudio#microphone",
+        "clock",
+    ],
+    "wlr/workspaces": {
+        "persistent_workspaces": {
+            "1": []
+        },
+        "format": "{}",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "all-outputs": true,
+        "active-only": false,
+        "on-click": "activate",
+    },
+    "tray": {
+        "icon-size": 14,
+        "tooltip": false,
+        "spacing": 10
+    },
+    "clock": {
+        "format": "{:%a | %D | %R}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "  ",
+        "format-ethernet": " Enternet",
+        "format-disconnected": "",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "on-click": "~/.config/waybar/scripts/rofi-wifi-menu.sh",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "tooltip": false,
+        "format-muted": " Muted",
+        "on-click": "pamixer -t",
+        "on-scroll-up": "pamixer -i 5",
+        "on-scroll-down": "pamixer -d 5",
+        "scroll-step": 5,
+        "format-icons": {
+            "default": [
+                "",
+                "",
+                "",
+                ""
+            ]
+        }
+    },
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "tooltip": false,
+        "format-source": " {volume}%",
+        "format-source-muted": " Muted",
+        "on-click": "pamixer --default-source -t",
+        "on-scroll-up": "pamixer --default-source -i 5",
+        "on-scroll-down": "pamixer --default-source -d 5",
+        "scroll-step": 5,
+    }
+}

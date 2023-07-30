@@ -9,6 +9,12 @@ setopt HIST_IGNORE_DUPS          # Do not record an event that was just recorded
 setopt HIST_IGNORE_SPACE         # Do not record an event starting with a space.
 setopt HIST_REDUCE_BLANKS        # removes blank lines from history
 
+setopt sharehistory
+setopt INC_APPEND_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
+
 # Completion
 autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select

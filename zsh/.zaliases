@@ -11,6 +11,8 @@ else
     alias la='ls -A'
     alias l='ls -CF'
 fi
+alias l='fc -RI'
+alias s='fc -AI'
 alias grep='grep --color=auto'
 alias vi='vim'
 alias ..="cd ../"

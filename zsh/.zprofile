@@ -1,0 +1,1 @@
+is-macos || exec Hyprland

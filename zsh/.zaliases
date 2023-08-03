@@ -11,6 +11,10 @@ else
     alias la='ls -A'
     alias l='ls -CF'
 fi
+if [[ $(which kitty) == 1 ]]
+then
+    alias ssh='kitty +kitten ssh'
+fi
 alias l='fc -RI'
 alias s='fc -AI'
 alias ls6='ls6.tacc.utexas.edu'

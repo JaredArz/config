@@ -16,7 +16,7 @@ swaybg --image ~/Desktop/wallpapers/notlain.jpg &
 #dunst &
 #automatic mounting
 nohup easyeffects --gapplication-service
-udiskie &
+udiskie -ant --menu-update-workaround &
 # numlockx on &
 
 # Authentication Agent

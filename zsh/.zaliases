@@ -11,15 +11,17 @@ else
     alias la='ls -A'
     alias l='ls -CF'
 fi
+
 if [[ $(which kitty) == 1 ]]
-then
-    alias ssh='kitty +kitten ssh'
+then 
+    alias ssh="kitty +kitten ssh"
 fi
+
+alias cd.. 'cd ..'
+alias ...="cd $OLDPWD"
 alias l='fc -RI'
 alias s='fc -AI'
 alias ls6='ls6.tacc.utexas.edu'
 alias INClabsim='10.157.89.176'
 alias grep='grep --color=auto'
 alias vi='vim'
-alias ..="cd ../"
-alias ...="cd $OLDPWD"
